@@ -1,7 +1,10 @@
+import player from '@vimeo/player';
 import Player from '@vimeo/player';
 var throttle = require('lodash.throttle');
 
-player.on("timeupdate", _throttle(function (data) {
+
+
+player.on("timeupdate", _.throttle(function (data) {
     const time = data.seconds;
     console.log(time);
     localStorage.setItem("videoplayer-current-time", JSON.stringify(time))
