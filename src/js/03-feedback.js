@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle';
+
 const STORAGE_KEY = 'fedback-form-state';
 let localObject = {};
 
@@ -7,7 +9,7 @@ const textAreaRef = document.querySelector('textarea');
 
 
 feedBackForm.addEventListener('submit', submitForm);
-feedBackForm.addEventListener('input', _.throttle(onFormWriting, 500))
+feedBackForm.addEventListener('input', throttle(onFormWriting, 500))
 
 function onFormWriting (evt){
     localObject[evt.target.name] = evt.target.value;
