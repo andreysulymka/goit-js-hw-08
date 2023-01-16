@@ -12,8 +12,7 @@ feedBackForm.addEventListener('submit', submitForm);
 feedBackForm.addEventListener('input', throttle(onFormWriting, 500))
 
 function onFormWriting (evt){
-    localObject[evt.target.name] = evt.target.value;
-    console.log(localObject)
+    localObject[evt.target.name] = evt.target.value;    
     const stringifiedData = JSON.stringify(localObject);
     localStorage.setItem(STORAGE_KEY, stringifiedData)
 }
