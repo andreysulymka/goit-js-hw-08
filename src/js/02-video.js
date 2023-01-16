@@ -1,8 +1,9 @@
 import player from '@vimeo/player';
-import Player from '@vimeo/player';
-import throttle from 'lodash.throttle';;
+import throttle from 'lodash.throttle';
 
+const iframePlayer = new Player (iframe);
 
+const iframe = document.getElementById('vimeo-player');
 
 player.on("timeupdate", throttle(function (data) {
     const time = data.seconds;
